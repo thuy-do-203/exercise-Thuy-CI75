@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    max-width: 50%;
+    min-height: fit-content;
+    margin: 50px auto;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 30px;
+}
+.addInfo > form{
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    grid-column-gap: 5px;
+}
+.addInfo{
+    margin-bottom: 20px;
+}
+.blue-bgr{
+    background-color: rgba(43, 43, 235, 0.897);
+    color: white;
+}
+.search{
+    margin: 20px 0;
+}
+input, button{
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 7px;
+}
+.search > form{
+    display: grid;
+    grid-template-columns: 70% 10% 20%;
+    grid-column-gap: 5px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: lightgray;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 550;
+}

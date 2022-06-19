@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1.1</title>
+</head>
+<body>
+    <script>
+        let userText = prompt("Please enter your text", "text12345");
+        function reverse() {
+            // Tách string thành mảng
+            let arr = userText.split("")
+            // Đảo ngược mảng
+            let reversedArr = arr.reverse()
+            // Nối mảng thành string
+            let newUserText = reversedArr.join("")
+            console.log(`Initial string is: ${userText}`);
+            console.log(`Reversed string is: ${newUserText}`);
+        };
+        reverse();
+    </script>
+</body>
+</html>

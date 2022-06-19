@@ -1,0 +1,53 @@
+<!-- 
+o	Danh bạ được sắp xếp bằng tên theo bảng chữ cái
+o	Thêm mới danh bạ với tên và số điện thoại
+o	Tìm kiếm danh bạ theo tên và số điện thoại
+o	Xoá các danh bạ bị trùng số điện thoại (ở trong ví dụ là Alice và Daniel). Sẽ xoá người nào đứng sau (Daniel sẽ bị xoá)
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1.4</title>
+    <link rel="stylesheet" href="b14.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <div class="addInfo">
+        <form>
+            <input type="text" id="name" name="Tên" placeholder="Tên">
+            <input type="text" id="phone" name="Điện thoại" placeholder="Điện Thoại">
+            <button class="blue-bgr">THÊM</button>
+        </form>
+    </div>
+    <hr>
+    <div class="search">
+        <form>
+            <input type="text" id="search" name="Tìm kiếm" placeholder="Tìm kiếm">
+            <button class="blue-bgr">TÌM</button>
+            <button class="blue-bgr">XOÁ TRÙNG</button>
+        </form>
+    </div>
+    <div class="listInfo">
+        <div class="info">
+            <span>Alice</span>
+            <span>(816)-403-5456</span>
+        </div>
+        <div class="info">
+            <span>Bob</span>
+            <span>(572)-566-2397</span>
+        </div>
+        <div class="info">
+            <span>Cris</span>
+            <span>(864)-309-4841</span>
+        </div>
+        <div class="info">
+            <span>Daniel</span>
+            <span>(816)-403-5456</span>
+        </div>
+    </div>
+</body>
+</html>

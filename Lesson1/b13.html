@@ -1,0 +1,34 @@
+<!-- 3.	Viết một chương trình lấy phần tử xuất hiện nhiều nhất trong một mảng và số lần suất hiện của nó trong mảng:
+Input: [1, 2, 3, 5, 6, 4, 2, 1, 6, 3, 5, 3]
+Output: {value: 3, count: 3}
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Bài 1.3</title>
+ </head>
+ <body>
+     <script>
+         let myArr = [1, 2, 3, 5, 6, 4, 2, 1, 6, 3, 5, 3];
+         let count = 0;
+         for (let i = 0; i < myArr.length; i++) {
+             for (let j = i; j < myArr.length; j++) {
+                if (myArr[i] == myArr[j]) {
+                    count +=1;
+                }
+             }
+             console.log(`Phần tử thứ ${i+1} xuất hiện ${count} lần`)
+             let outPut = {}
+             outPut.value = myArr[i]
+             outPut.count = count
+             console.log(outPut)
+             count = 0
+         }
+         
+     </script>
+ </body>
+ </html>
