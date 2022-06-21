@@ -20,7 +20,7 @@ o	Xoá các danh bạ bị trùng số điện thoại (ở trong ví dụ là A
         <form>
             <input type="text" id="name" name="Tên" placeholder="Tên">
             <input type="text" id="phone" name="Điện thoại" placeholder="Điện Thoại">
-            <button class="blue-bgr">THÊM</button>
+            <input type="button" onclick="addInfo()" class="blue-bgr" value="THÊM">
         </form>
     </div>
     <hr>
@@ -31,23 +31,12 @@ o	Xoá các danh bạ bị trùng số điện thoại (ở trong ví dụ là A
             <button class="blue-bgr">XOÁ TRÙNG</button>
         </form>
     </div>
-    <div class="listInfo">
-        <div class="info">
+    <div id="listInfo">
+        <!-- <div class="info">
             <span>Alice</span>
             <span>(816)-403-5456</span>
-        </div>
-        <div class="info">
-            <span>Bob</span>
-            <span>(572)-566-2397</span>
-        </div>
-        <div class="info">
-            <span>Cris</span>
-            <span>(864)-309-4841</span>
-        </div>
-        <div class="info">
-            <span>Daniel</span>
-            <span>(816)-403-5456</span>
-        </div>
+        </div> -->
     </div>
+    <script src="b14.js"></script>
 </body>
 </html>
