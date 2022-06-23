@@ -20,17 +20,9 @@ let listInfo = document.getElementById("listInfo");
 let contactArr = [];
 
 // Sắp xếp theo tên
-function compare(a, b) {
-    if (a.name < b.name){
-    return -1;
-    }
-    if (a.name > b.name){
-    return 1;
-    }
-    return 0;
-}
-infoArr.sort(compare);
+infoArr.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
 
+//Hiển thị 4 contact ban đầu
 for (let i = 0; i < infoArr.length; i++) {
     let contacts = document.createElement("div");
     contacts.className = "info";
@@ -46,9 +38,9 @@ for (let i = 0; i < infoArr.length; i++) {
 
 // Thêm thông tin sau khi nhấn nút "Thêm"
 function addInfo() {
-    let fillIn = document.getElementsByTagName('input');
+    let fillIn = document.getElementsByTagName("input");
     let contacts = document.createElement("div");
-    contacts.className = "info";
+    contacts.className = "contact";
     let name = document.createElement("span");
     // viết hoa chữ cái đầu tiên
     name.innerHTML = capitalizeFirstLetter(fillIn[0].value);
@@ -56,30 +48,43 @@ function addInfo() {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     let phone = document.createElement("span");
-    // kiểm tra xem số điện thoại
     phone.innerHTML = fillIn[1].value;
-    function checkLetter(string) {
-        return /[a-zA-z]/.test(string);
+    contacts.appendChild(name);
+    contacts.appendChild(phone);
+    // thêm contact mới vào mảng danh bạ
+    contactArr[contactArr.length] = contacts.innerHTML;
+    // infoArr[infoArr.length].name = name.innerText;
+    // infoArr[infoArr.length].phone = phone.innerText;
+    // xóa danh bạ cũ đi
+    while (listInfo.hasChildNodes()) {
+        listInfo.removeChild(listInfo.firstChild);
     }
-    // nếu số điện thoại có chữ cái thì thông báo
-    if (checkLetter(fillIn[1].value) == true) {
-        alert("please do not type any letter in the phone number!");
-    } else {
-        contacts.appendChild(name);
-        contacts.appendChild(phone);
-        // thêm contact mới vào mảng danh bạ
-        contactArr[contactArr.length] = contacts.innerHTML;
-        // xóa danh bạ cũ đi
-        while (listInfo.hasChildNodes()) {
-            listInfo.removeChild(listInfo.firstChild);
-        }
-        // bổ sung danh bạ mới, đã được sắp xếp thứ tự
-        for (let j = 0; j < contactArr.length; j++) {
-            let contacts = document.createElement("div");
-            contacts.className = "info";
-            contactArr.sort();
-            contacts.innerHTML = contactArr[j];
-            listInfo.appendChild(contacts);
-        }
+    // Thêm danh bạ mới, và sắp xếp thứ tự
+    for (let j = 0; j < contactArr.length; j++) {
+        let contacts = document.createElement("div");
+        contacts.className = "info";
+        contactArr.sort();
+        contacts.innerHTML = contactArr[j];
+        listInfo.appendChild(contacts);
     }
 };
+console.log(contactArr);
+// console.log(infoArr);
+
+// Search
+function searchInfo() {
+    let fillIn = document.getElementsByTagName("input");
+    let searchText = fillIn[3].value
+    console.log(searchText);
+    for (let i = 0; i < contactArr.length; i++) {
+        let contact = listInfo.children[i].firstChild;
+        console.log(contact.innerText);
+        let searchNum = contact.innerText.indexOf(searchText)
+        console.log(searchNum);
+        if (searchNum == -1) {
+            listInfo.children[i].style.display = "none";
+        } else {
+            listInfo.children[i].style.display = "flex";
+        }
+    }
+}
